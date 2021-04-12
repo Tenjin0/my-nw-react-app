@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+
+<body>
+    <div id="root">
+        <script src="http://localhost:4000/bundle.js"></script>
+    </div>
+    <script>
+        const path = './';
+        const fs = require('fs');
+        
+        const reloadWatcher=fs.watch(path, function() {
+            location.reload();
+            reloadWatcher.close();
+        });
+    </script>
+</html>
